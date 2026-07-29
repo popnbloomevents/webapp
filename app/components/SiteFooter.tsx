@@ -1,0 +1,10 @@
+export function SiteFooter() {
+  return (
+    <footer className="shell footer">
+      <a className="brand" href="/"><span>POP N BLOOM</span><small>EVENT STUDIO</small></a>
+      <p>Modern balloon art for life’s most beautiful moments.</p>
+      <div><a href="mailto:hello@popnbloom.ca">Email</a><a href="/work">Our work</a><a href="/#services">Services</a></div>
+      <small>© 2026 Pop N Bloom · Vancouver, BC</small>
+    </footer>
+  );
+}
