@@ -21,7 +21,7 @@ export default function Home() {
         <div className="heroImage"><img src="/hero-balloons.png" alt="Blush and ivory organic balloon installation with flowers" /><span className="imageNote">Custom designed<br />for your moment</span></div>
         <div className="heroCopy">
           <p className="eyebrow">Vancouver · Event décor studio</p>
-          <h1>Joy,<br /><em>beautifully</em><br />arranged.</h1>
+          <h1><span>Joy,</span><em>beautifully</em><span>arranged.</span></h1>
           <p className="intro">Bespoke balloon installations designed with a floral eye and an editorial sensibility.</p>
           <a className="textLink" href="#inquire">Create something beautiful <span>→</span></a>
         </div>
