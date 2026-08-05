@@ -16,7 +16,8 @@ export function MotionEffects() {
 
     targets.forEach((target, index) => {
       target.classList.add("revealMotion");
-      target.style.setProperty("--reveal-delay", `${Math.min(index % 3, 2) * 90}ms`);
+      target.classList.add(index % 2 === 0 ? "revealFromLeft" : "revealFromRight");
+      target.style.setProperty("--reveal-delay", `${Math.min(index % 3, 2) * 70}ms`);
     });
 
     const observer = new IntersectionObserver(

@@ -57,3 +57,27 @@
 .proofImage img{animation:proofBreath 12s ease-in-out infinite alternate}@keyframes proofBreath{to{transform:scale(1.045)}}
 @media(max-width:800px){.packageGrid .packageFeatured:hover{transform:translateY(-10px)}.stepsV4 article:hover{padding-left:12px}.inquiryForm:hover{transform:none}.heroV4Image img,.proofImage img{animation:none}}
 @media(prefers-reduced-motion:reduce){.revealMotion{opacity:1;transform:none;filter:none}.heroV4Copy,.heroV4Copy h1,.heroV4Image,.heroV4Image img,.heroStamp,.proofImage img{animation:none!important}.scrollProgress{display:none}}
+
+/* Calmer directional reveals and elevated card styling */
+.marquee div{animation:none;transform:none}
+.heroV4Image img,.proofImage img{animation:none!important;transform:none}
+.heroStamp{animation:stampIn .8s .55s cubic-bezier(.16,1,.3,1) both}
+.revealMotion{opacity:0;filter:none;transition:opacity .72s ease,transform .82s cubic-bezier(.16,1,.3,1);transition-delay:var(--reveal-delay,0ms);will-change:opacity,transform}
+.revealMotion.revealFromLeft{transform:translateX(-48px)}
+.revealMotion.revealFromRight{transform:translateX(48px)}
+.revealMotion.isVisible{opacity:1;transform:translateX(0)}
+.workV4Grid{gap:26px}
+.workV4Card{background:rgba(255,255,255,.045);padding:12px 12px 22px;border:1px solid rgba(255,255,255,.12);border-radius:3px;box-shadow:0 18px 60px rgba(0,0,0,.14);transition:transform .45s cubic-bezier(.16,1,.3,1),border-color .4s ease,background-color .4s ease}
+.workV4Card:hover{transform:translateY(-7px);border-color:rgba(245,169,191,.55);background:rgba(255,255,255,.075)}
+.workV4Card>div{border-radius:2px}.workV4Card small{padding-inline:5px}.workV4Card h3{padding-inline:5px;font-size:34px}.workV4Card .cardArrow{right:18px;bottom:27px;width:34px;height:34px;border-radius:50%;border:1px solid rgba(245,169,191,.5);display:grid;place-items:center;font-size:14px}.workV4Card:after{display:none}
+.packageGrid{gap:22px}
+.packageGrid article{border-radius:3px;border:1px solid rgba(36,22,25,.13);padding:44px;box-shadow:0 20px 55px rgba(95,35,54,.08);overflow:hidden}
+.packageGrid article:before{content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-56px;top:-58px;background:rgba(245,169,191,.22);transition:transform .5s ease}
+.packageGrid article:hover:before{transform:scale(1.15)}
+.packageGrid article>span{width:38px;height:38px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center}
+.packageGrid h3{font-size:50px;margin-top:4px}.packageGrid article>a{padding:16px 4px 0;display:flex;justify-content:space-between;align-items:center}.packageGrid article>a:after{content:"→";font-size:15px;color:var(--hot)}
+.packageFeatured{box-shadow:0 28px 75px rgba(81,17,36,.24)}.packageFeatured:before{background:rgba(245,169,191,.14)!important}.packageFeatured article>a:after{color:var(--pink)}
+.stepsV4 article{transition:background-color .35s ease}.stepsV4 article:hover{padding-left:inherit;background:rgba(245,169,191,.12)}
+.inquiryForm:hover{transform:none;box-shadow:0 28px 85px rgba(78,30,43,.13)}
+@media(max-width:800px){.revealMotion.revealFromLeft{transform:translateX(-24px)}.revealMotion.revealFromRight{transform:translateX(24px)}.revealMotion.isVisible{transform:none}.workV4Card{padding:10px 10px 20px}.packageGrid article{padding:34px 28px}.packageFeatured:hover{transform:none!important}}
+@media(prefers-reduced-motion:reduce){.revealMotion.revealFromLeft,.revealMotion.revealFromRight{transform:none}}
