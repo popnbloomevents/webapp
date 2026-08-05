@@ -2,12 +2,12 @@ export function SiteHeader() {
   return (
     <header className="nav shell">
       <a className="brand" href="/" aria-label="Pop N Bloom home">
-        <span>POP N BLOOM</span><small>EVENT STUDIO</small>
+        <span>POP N BLOOM</span><small>SCULPTURAL CELEBRATIONS</small>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="/work">Our work</a><a href="/#services">Services</a><a href="/#story">Studio</a>
+        <a href="/work">Work</a><a href="/#services">Services</a><a href="/#story">About</a>
       </nav>
-      <a className="navCta" href="/#inquire">Plan your moment <span>↗</span></a>
+      <a className="navCta" href="/#inquire">Check your date <span>↗</span></a>
     </header>
   );
 }

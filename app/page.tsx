@@ -2,44 +2,53 @@ import { InquiryForm } from "./components/InquiryForm";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
 
-const services = [
-  { number: "01", title: "Organic installations", text: "Sculptural garlands, arches and statement walls shaped to your venue." },
-  { number: "02", title: "Weddings & soirées", text: "Considered décor for ceremonies, showers, birthdays and intimate dinners." },
-  { number: "03", title: "Brand moments", text: "Photo-ready launches, openings and corporate celebrations in your palette." },
-];
 const featured = [
-  { href:"/work/balloon-arrangements", image:"/arrangement-blush-v2.png", kicker:"Most loved", title:"Balloon arrangements", note:"Garlands · arches · statement pieces" },
-  { href:"/work/weddings", image:"/wedding-ceremony-v2.png", kicker:"The romantic edit", title:"Weddings", note:"Ceremonies · receptions · showers" },
-  { href:"/work/brand-events", image:"/brand-launch-v2.png", kicker:"Made to be noticed", title:"Brand events", note:"Launches · openings · activations" },
+  { href:"/work/balloon-arrangements", image:"/arrangement-blush-v2.png", number:"01", title:"Artful arrangements", note:"Garlands · arches · statement pieces" },
+  { href:"/work/weddings", image:"/wedding-ceremony-v2.png", number:"02", title:"Modern romance", note:"Weddings · engagements · showers" },
+  { href:"/work/brand-events", image:"/brand-launch-v2.png", number:"03", title:"Brand impact", note:"Launches · openings · activations" },
 ];
 
 export default function Home() {
   return (
     <main>
       <SiteHeader />
-      <section className="hero shell" id="top">
-        <div className="heroImage"><img src="/hero-balloons.png" alt="Blush and ivory organic balloon installation with flowers" /><span className="imageNote">Custom designed<br />for your moment</span></div>
-        <div className="heroCopy">
-          <p className="eyebrow">Vancouver · Event décor studio</p>
-          <h1><span>Joy,</span><em>beautifully</em><span>arranged.</span></h1>
-          <p className="intro">Bespoke balloon installations designed with a floral eye and an editorial sensibility.</p>
-          <a className="textLink" href="#inquire">Create something beautiful <span>→</span></a>
+      <section className="heroV4 shell" id="top">
+        <div className="heroV4Copy">
+          <p className="eyebrow">Vancouver & the Lower Mainland</p>
+          <h1>We make<br />rooms <em>feel</em><br />like a party.</h1>
+          <p>Bespoke balloon art and event styling for people who want celebration without the cookie-cutter.</p>
+          <div className="heroActions"><a className="primaryButton" href="#inquire">Start your event <span>↗</span></a><a className="textLink" href="/work">See the work <span>→</span></a></div>
+          <div className="heroTrust"><span>Custom concepts</span><span>Full setup</span><span>Stress-free teardown</span></div>
         </div>
-        <span className="heroIndex">Est. 2024 · YVR</span>
+        <div className="heroV4Image"><img src="/hero-campaign-v4.png" alt="Sculptural pink, cherry and chrome balloon installation" /><div className="heroStamp"><b>POP!</b><small>Made in<br />Vancouver</small></div></div>
       </section>
 
-      <section className="manifesto" id="story"><div className="shell manifestoInner"><p className="eyebrow">Our point of view</p><h2>Not just balloons.<br /><em>A feeling, made visible.</em></h2><p>We compose colour, scale and texture into immersive moments that belong wholly to you. Every installation is imagined from scratch, installed with care and remembered long after the last toast.</p></div></section>
+      <div className="marquee" aria-hidden="true"><div>Balloon art · Backdrops · Florals · Brand moments · Milestones · Balloon art · Backdrops · Florals · Brand moments · Milestones ·</div></div>
 
-      <section className="featuredWork shell" id="work">
-        <div className="sectionHead"><div><p className="eyebrow">Popular work</p><h2>A little glimpse<br /><em>of what we do.</em></h2></div><div><p>Explore our most-requested celebration styles, then wander through the complete portfolio.</p><a className="textLink" href="/work">View all work <span>→</span></a></div></div>
-        <div className="featuredGrid">{featured.map((item) => <a className="featuredCard" href={item.href} key={item.title}><div className="featuredImage"><img src={item.image} alt={item.title} /><span>{item.kicker}</span></div><div><small>{item.note}</small><h3>{item.title}</h3><i>↗</i></div></a>)}</div>
+      <section className="introV4 shell" id="story">
+        <div className="introLabel"><p className="eyebrow">The Pop N Bloom way</p><span>Est. 2024</span></div>
+        <div><h2>Less party store.<br /><em>More art direction.</em></h2><p>We turn a palette, a place and a reason to celebrate into one unforgettable visual story. Thoughtful scale. Unexpected colour. Every detail handled.</p></div>
       </section>
 
-      <section className="services" id="services"><div className="shell"><div className="sectionHead light"><div><p className="eyebrow">What we create</p><h2>One vision.<br /><em>Every detail.</em></h2></div><p>From the first colour swatch to the final flourish, we make the experience feel effortless.</p></div><div className="serviceList">{services.map((service) => <article key={service.number}><span>{service.number}</span><h3>{service.title}</h3><p>{service.text}</p><i>↗</i></article>)}</div></div></section>
+      <section className="workV4" id="work"><div className="shell">
+        <div className="v4SectionHead"><div><p className="eyebrow">What everyone’s saving</p><h2>Three ways<br />to make an entrance.</h2></div><a href="/work">View the full portfolio <span>↗</span></a></div>
+        <div className="workV4Grid">{featured.map((item) => <a href={item.href} className="workV4Card" key={item.title}><div><img src={item.image} alt={item.title} /><span className="workNumber">{item.number}</span></div><small>{item.note}</small><h3>{item.title}</h3><span className="cardArrow">↗</span></a>)}</div>
+      </div></section>
 
-      <section className="process shell"><p className="eyebrow">How it unfolds</p><div className="processGrid"><h2>Dream it.<br /><em>We’ll shape it.</em></h2><ol><li><span>01</span><div><h3>Tell us your vision</h3><p>Share your date, venue, palette and the mood you want guests to feel.</p></div></li><li><span>02</span><div><h3>We design the moment</h3><p>You’ll receive a custom concept and transparent quote tailored to your space.</p></div></li><li><span>03</span><div><h3>Arrive & celebrate</h3><p>We deliver, install and style every detail before your guests step inside.</p></div></li></ol></div></section>
+      <section className="serviceV4" id="services"><div className="shell">
+        <div className="v4SectionHead serviceHead"><div><p className="eyebrow">Choose your impact</p><h2>Start with a feeling.<br />We’ll build the rest.</h2></div><p>Every proposal is custom. These are the three most popular ways clients begin.</p></div>
+        <div className="packageGrid">
+          <article><span>01</span><small>From $650</small><h3>The Moment</h3><p>A polished focal point for showers, birthdays and intimate celebrations.</p><ul><li>Organic balloon feature</li><li>Curated colour palette</li><li>Delivery & installation</li></ul><a href="#inquire">Ask about The Moment ↗</a></article>
+          <article className="packageFeatured"><div>Most requested</div><span>02</span><small>From $1,500</small><h3>The Scene</h3><p>A complete photo-ready setting with layered balloon art and styling pieces.</p><ul><li>Statement balloon installation</li><li>Backdrop or plinth styling</li><li>Florals & custom details</li><li>Setup and teardown</li></ul><a href="#inquire">Ask about The Scene ↗</a></article>
+          <article><span>03</span><small>Custom proposal</small><h3>The Experience</h3><p>Immersive styling for weddings, launches and celebrations that fill a room.</p><ul><li>Creative direction</li><li>Multiple styled moments</li><li>Vendor coordination</li><li>Full-service execution</li></ul><a href="#inquire">Build an experience ↗</a></article>
+        </div>
+      </div></section>
 
-      <section className="inquire" id="inquire"><div className="shell inquiryLayout"><div className="inquiryCopy"><p className="eyebrow">Let’s make it memorable</p><h2>Your celebration<br /><em>starts here.</em></h2><p>Tell us what you’re dreaming up. We’ll reply within two business days with availability and thoughtful next steps.</p><div className="inquiryAside"><span>Prefer email?</span><a href="mailto:hello@popnbloom.ca">hello@popnbloom.ca</a></div></div><InquiryForm /></div></section>
+      <section className="proofV4"><div className="shell proofGrid"><div className="proofImage"><img src="/gallery-birthday.png" alt="Pink and burgundy balloon installation" /></div><div className="proofQuote"><span>“</span><blockquote>Every guest stopped at the entrance. It didn’t just decorate the room—it changed the whole energy.</blockquote><p>Clara M. · Vancouver bride</p><div><b>48+</b><small>celebrations styled</small><b>100%</b><small>custom designed</small></div></div></div></section>
+
+      <section className="processV4 shell"><div className="v4SectionHead"><div><p className="eyebrow">Easy on purpose</p><h2>From “what if?”<br />to “wow.”</h2></div><p>Planning should feel exciting. Our three-step process keeps it simple.</p></div><div className="stepsV4"><article><span>01</span><h3>Tell us the feeling</h3><p>Date, venue, palette, inspiration—we’ll ask the right questions.</p></article><article><span>02</span><h3>See it take shape</h3><p>Receive a creative concept and clear custom proposal for your space.</p></article><article><span>03</span><h3>Walk into the wow</h3><p>We deliver, style, install and return for teardown. You simply arrive.</p></article></div></section>
+
+      <section className="inquire inquireV4" id="inquire"><div className="shell inquiryLayout"><div className="inquiryCopy"><p className="eyebrow">Dates go quickly</p><h2>Let’s make<br /><em>some noise.</em></h2><p>Share the details you know. We’ll reply within two business days with availability and a creative next step.</p><div className="inquiryAside"><span>Prefer a direct note?</span><a href="mailto:hello@popnbloom.ca">hello@popnbloom.ca</a></div></div><InquiryForm /></div></section>
       <SiteFooter />
     </main>
   );
