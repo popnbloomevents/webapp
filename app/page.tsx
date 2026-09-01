@@ -9,25 +9,42 @@ const featured = [
 ];
 
 export default function Home() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Pop N Bloom",
+    description: "Luxury event décor, custom backdrops and video guestbook rentals in Vancouver and the Lower Mainland.",
+    areaServed: ["Vancouver", "Lower Mainland", "Burnaby", "Richmond", "Surrey"],
+    email: "hello@popnbloom.ca",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Event Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Event Décor and Custom Backdrops", description: "Custom event backdrops, balloon styling and statement décor for weddings, birthdays, showers and corporate events." } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Styled Vintage Telephone Video Guestbook Rental", description: "A decorated tabletop vintage telephone video guestbook for Vancouver weddings and events, capturing personal messages from guests." } },
+      ],
+    },
+  };
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <SiteHeader />
       <section className="heroV4 shell" id="top">
         <div className="heroV4Copy">
           <p className="eyebrow">Vancouver & the Lower Mainland</p>
           <h1>We make<br />rooms <em>feel</em><br />like a party.</h1>
-          <p>Bespoke balloon art and event styling for people who want celebration without the cookie-cutter.</p>
+          <p>Custom event décor, statement backdrops and video guestbooks for celebrations that deserve to look beautiful and feel personal.</p>
           <div className="heroActions"><a className="primaryButton" href="#inquire">Start your event <span>↗</span></a><a className="textLink" href="/work">See the work <span>→</span></a></div>
-          <div className="heroTrust"><span>Custom concepts</span><span>Full setup</span><span>Stress-free teardown</span></div>
+          <div className="heroTrust"><span>Custom event styling</span><span>Video memories</span><span>Full setup</span></div>
         </div>
         <div className="heroV4Image"><img src="/hero-campaign-v4.png" alt="Sculptural pink, cherry and chrome balloon installation" /><div className="heroStamp"><b>POP!</b><small>Made in<br />Vancouver</small></div></div>
       </section>
 
-      <div className="marquee" aria-hidden="true"><div>Balloon art · Backdrops · Florals · Brand moments · Milestones · Balloon art · Backdrops · Florals · Brand moments · Milestones ·</div></div>
+      <div className="marquee" aria-hidden="true"><div>Event décor · Custom backdrops · Video guestbooks · Weddings · Milestones · Event décor · Custom backdrops · Video guestbooks · Weddings · Milestones ·</div></div>
 
       <section className="introV4 shell" id="story">
         <div className="introLabel"><p className="eyebrow">The Pop N Bloom way</p><span>Est. 2024</span></div>
-        <div><h2>Less party store.<br /><em>More art direction.</em></h2><p>We turn a palette, a place and a reason to celebrate into one unforgettable visual story. Thoughtful scale. Unexpected colour. Every detail handled.</p></div>
+        <div><h2>Beautiful scenes.<br /><em>Unfiltered memories.</em></h2><p>We style the moment guests walk into—and help you keep the messages they leave behind. Custom event décor and video guestbooks, thoughtfully brought together for celebrations across Vancouver.</p></div>
       </section>
 
       <section className="workV4" id="work"><div className="shell">
@@ -36,11 +53,16 @@ export default function Home() {
       </div></section>
 
       <section className="serviceV4" id="services"><div className="shell">
-        <div className="v4SectionHead serviceHead"><div><p className="eyebrow">Choose your impact</p><h2>Start with a feeling.<br />We’ll build the rest.</h2></div><p>Every proposal is custom. These are the three most popular ways clients begin.</p></div>
-        <div className="packageGrid">
-          <article><span>01</span><small>From $650</small><h3>The Moment</h3><p>A polished focal point for showers, birthdays and intimate celebrations.</p><ul><li>Organic balloon feature</li><li>Curated colour palette</li><li>Delivery & installation</li></ul><a href="#inquire">Ask about The Moment ↗</a></article>
-          <article className="packageFeatured"><div>Most requested</div><span>02</span><small>From $1,500</small><h3>The Scene</h3><p>A complete photo-ready setting with layered balloon art and styling pieces.</p><ul><li>Statement balloon installation</li><li>Backdrop or plinth styling</li><li>Florals & custom details</li><li>Setup and teardown</li></ul><a href="#inquire">Ask about The Scene ↗</a></article>
-          <article><span>03</span><small>Custom proposal</small><h3>The Experience</h3><p>Immersive styling for weddings, launches and celebrations that fill a room.</p><ul><li>Creative direction</li><li>Multiple styled moments</li><li>Vendor coordination</li><li>Full-service execution</li></ul><a href="#inquire">Build an experience ↗</a></article>
+        <div className="v4SectionHead serviceHead"><div><p className="eyebrow">Our two signature services</p><h2>Style the scene.<br />Save every word.</h2></div><p>One service transforms the room. The other preserves the voices, laughter and stories inside it.</p></div>
+        <div className="signatureServices">
+          <article className="signatureService">
+            <div className="serviceImage"><img src="/service-event-decor-v1.png" alt="Luxury custom event backdrop with blush and cherry balloon décor in Vancouver" /><span>01</span></div>
+            <div className="serviceBody"><p className="eyebrow">Vancouver event décor & backdrops</p><h3>Event Décor</h3><p>Turn an ordinary venue into a celebration that feels unmistakably yours. We design custom backdrops, balloon installations and polished focal moments for weddings, birthdays, showers, proposals and brand events across Vancouver and the Lower Mainland.</p><ul><li>Custom backdrop design</li><li>Balloon styling and statement installations</li><li>Delivery, professional setup and teardown</li></ul><a href="#inquire">Design my event <span>↗</span></a></div>
+          </article>
+          <article className="signatureService signatureReverse">
+            <div className="serviceImage"><img src="/service-video-guestbook-v1.png" alt="Decorated tabletop vintage telephone video guestbook rental for a Vancouver wedding reception" /><span>02</span></div>
+            <div className="serviceBody"><p className="eyebrow">Vintage telephone video guestbook Vancouver</p><h3>Video Guestbook</h3><p>A beautifully styled vintage telephone station becomes the place where your favourite people tell stories, share advice and leave wonderfully unscripted messages. Guests simply lift the receiver and record a personal video you can replay long after the celebration ends.</p><ul><li>Elegant tabletop telephone station styled to your event</li><li>Simple lift-and-record guest experience</li><li>Professional setup, florals and guest instructions</li><li>Collected video messages delivered after your event</li></ul><a href="#inquire">Reserve the video guestbook <span>↗</span></a></div>
+          </article>
         </div>
       </div></section>
 
