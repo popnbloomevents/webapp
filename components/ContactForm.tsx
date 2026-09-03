@@ -1,4 +1,50 @@
 "use client";
-import {useState,type FormEvent} from "react";
-const options=["Event Decor & Backdrops","Video Guestbook"];
-export function ContactForm(){const[done,setDone]=useState(false);const[sending,setSending]=useState(false);const[error,setError]=useState(false);async function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;setSending(true);setError(false);try{const data=new FormData(form);const body=new URLSearchParams(Array.from(data.entries()).map(([key,value])=>[key,String(value)])).toString();const response=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body});if(!response.ok)throw new Error("Submission failed");setDone(true)}catch{setError(true)}finally{setSending(false)}}if(done)return <div className="success" role="status"><span>✓</span><h3>Thank you!</h3><p>Your inquiry has been sent to Pop&apos;n Bloom Events. We&apos;ll be in touch soon to talk through the details.</p><button onClick={()=>setDone(false)}>Send another inquiry</button></div>;return <form className="contact-form" name="event-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={submit}><input type="hidden" name="form-name" value="event-inquiry"/><p className="form-trap" aria-hidden="true"><label>Do not fill this out<input name="bot-field" tabIndex={-1} autoComplete="off"/></label></p><div className="form-grid"><label>Name<input name="name" autoComplete="name" required/></label><label>Email<input name="email" type="email" autoComplete="email" required/></label><label>Phone<input name="phone" type="tel" autoComplete="tel" required/></label><label>Event date<input name="event-date" type="date" required/></label><label>Event location<input name="location" autoComplete="street-address" required/></label><label>Event type<select name="event-type" required defaultValue=""><option value="" disabled>Select an event</option><option>Birthday</option><option>Baptism</option><option>Baby shower</option><option>Graduation</option><option>Milestone</option><option>Corporate event</option><option>Other</option></select></label><label className="full">Approximate budget<select name="approximate-budget" required defaultValue=""><option value="" disabled>Select a range</option><option>Under $350</option><option>$350–$750</option><option>$750+</option></select></label></div><fieldset><legend>Services interested in</legend><div className="checkboxes">{options.map(o=><label key={o}><input type="checkbox" name="services" value={o}/><span>{o}</span></label>)}</div></fieldset><label>Message / inspiration<textarea name="message" rows={5} required placeholder="Tell us about the theme, colours, space, and ideas you love..."/></label>{error&&<p className="form-error" role="alert">We couldn&apos;t send your inquiry. Please try again or email popnbloomeventsbc@gmail.com.</p>}<button className="button" type="submit" disabled={sending}>{sending?"Sending...":"Send Inquiry"}</button></form>}
+
+import { useState, type FormEvent } from "react";
+
+const options = ["Event Decor & Backdrops", "Video Guestbook"];
+
+export function ContactForm() {
+  const [done, setDone] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
+
+  async function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    if (!form.reportValidity()) return;
+    setSending(true);
+    setError(false);
+    try {
+      const data = new FormData(form);
+      const body = new URLSearchParams(Array.from(data.entries()).map(([key, value]) => [key, String(value)])).toString();
+      const response = await fetch("/__forms.html", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body });
+      if (!response.ok) throw new Error("Submission failed");
+      setDone(true);
+    } catch {
+      setError(true);
+    } finally {
+      setSending(false);
+    }
+  }
+
+  if (done) return <div className="success" role="status"><span>✓</span><h3>Thank you!</h3><p>Your inquiry has been sent to Pop&apos;n Bloom Events. We&apos;ll be in touch soon to talk through the details.</p><button onClick={() => setDone(false)}>Send another inquiry</button></div>;
+
+  return <form className="contact-form" name="event-inquiry" method="POST" onSubmit={submit}>
+    <input type="hidden" name="form-name" value="event-inquiry" />
+    <p className="form-trap" aria-hidden="true"><label>Do not fill this out<input name="bot-field" tabIndex={-1} autoComplete="off" /></label></p>
+    <div className="form-grid">
+      <label>Name<input name="name" autoComplete="name" required /></label>
+      <label>Email<input name="email" type="email" autoComplete="email" required /></label>
+      <label>Phone<input name="phone" type="tel" autoComplete="tel" required /></label>
+      <label>Event date<input name="event-date" type="date" required /></label>
+      <label>Event location<input name="location" autoComplete="street-address" required /></label>
+      <label>Event type<select name="event-type" required defaultValue=""><option value="" disabled>Select an event</option><option>Birthday</option><option>Baptism</option><option>Baby shower</option><option>Graduation</option><option>Milestone</option><option>Corporate event</option><option>Other</option></select></label>
+      <label className="full">Approximate budget<select name="approximate-budget" required defaultValue=""><option value="" disabled>Select a range</option><option>Under $350</option><option>$350–$750</option><option>$750+</option></select></label>
+    </div>
+    <fieldset><legend>Services interested in</legend><div className="checkboxes">{options.map((option) => <label key={option}><input type="checkbox" name="services" value={option} /><span>{option}</span></label>)}</div></fieldset>
+    <label>Message / inspiration<textarea name="message" rows={5} required placeholder="Tell us about the theme, colours, space, and ideas you love..." /></label>
+    {error && <p className="form-error" role="alert">We couldn&apos;t send your inquiry. Please try again or email popnbloomeventsbc@gmail.com.</p>}
+    <button className="button" type="submit" disabled={sending}>{sending ? "Sending..." : "Send Inquiry"}</button>
+  </form>;
+}
