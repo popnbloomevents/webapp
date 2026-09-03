@@ -1,26 +1,7 @@
-import type { Metadata } from "next";
-import { MotionEffects } from "./components/MotionEffects";
+import type {Metadata} from "next";
+import {Montserrat,Poppins} from "next/font/google";
 import "./globals.css";
-
-export const metadata: Metadata = {
-  title: "Vancouver Event Décor, Backdrops & Video Guestbook | Pop N Bloom",
-  description: "Custom event décor, luxury backdrops and a styled vintage telephone video guestbook for weddings and celebrations in Vancouver and the Lower Mainland.",
-  keywords: ["Vancouver event decor", "custom backdrops Vancouver", "video guestbook rental Vancouver", "vintage telephone video guestbook", "wedding decor Vancouver", "event backdrop rental", "video guestbook wedding"],
-  icons: { icon: "/favicon.svg" },
-  openGraph: {
-    title: "Pop N Bloom | Event Décor & Video Guestbooks in Vancouver",
-    description: "Style the scene and save every word with custom event décor, luxury backdrops and video guestbook rentals.",
-    type: "website",
-    images: [{ url: "/og.png", width: 1732, height: 909, alt: "Pop N Bloom modern balloon art" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Pop N Bloom | Event Décor & Video Guestbooks in Vancouver",
-    description: "Custom event décor, luxury backdrops and video guestbook rentals for Vancouver celebrations.",
-    images: ["/og.png"],
-  },
-};
-
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><MotionEffects />{children}</body></html>;
-}
+const montserrat=Montserrat({subsets:["latin"],variable:"--font-heading",display:"swap"});
+const poppins=Poppins({subsets:["latin"],weight:["300","400","500","600"],variable:"--font-body",display:"swap"});
+export const metadata:Metadata={metadataBase:new URL("https://www.popnbloomevents.ca"),title:"Pop'n Bloom Events | Event Styling in Metro Vancouver",description:"Warm, modern balloon décor, personalized backdrops and an emotional Video Guestbook experience for celebrations across Metro Vancouver.",keywords:["Metro Vancouver event styling","balloon decor Vancouver","custom event backdrops","video guestbook rental","birthday decor Vancouver"],openGraph:{title:"Pop'n Bloom Events",description:"Creating celebrations that pop & bloom.",type:"website",images:[{url:"/images/hero-mirae-turns-one.jpg",width:2048,height:1366,alt:"Pop'n Bloom first birthday event styling"}]},twitter:{card:"summary_large_image",title:"Pop'n Bloom Events",description:"Creating celebrations that pop & bloom.",images:["/images/hero-mirae-turns-one.jpg"]}};
+export default function RootLayout({children}:Readonly<{children:React.ReactNode}>){return <html lang="en" className={`${montserrat.variable} ${poppins.variable}`}><body>{children}</body></html>}
