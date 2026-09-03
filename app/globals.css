@@ -25,3 +25,10 @@
 .ae-credit{width:max-content;margin:24px auto 0;display:inline-flex;align-items:center;gap:11px;padding-top:22px;border-top:1px solid var(--border);color:var(--muted);font-size:.7rem;letter-spacing:.03em}.ae-credit>img{width:52px;height:52px;border-radius:50%;object-fit:cover}.ae-credit>span:last-child{display:flex;flex-direction:column;align-items:flex-start;line-height:1.35}.ae-credit strong{color:var(--ink);font-family:var(--font-heading);font-size:.78rem}
 @media(max-width:900px){.hero-content{padding-top:105px}.hero-scene img{object-position:55% center}.hero-photo-card{right:24px;top:44%;width:200px;height:240px}.hero-note{display:none}}
 @media(max-width:640px){.brand-logo>img{width:174px;height:52px}.hero{height:780px}.hero-content{padding-top:70px}.hero-content h1{font-size:clamp(2.45rem,11vw,3.7rem)}.hero-content>p:not(.eyebrow){font-size:.92rem;max-width:92%;margin:18px 0 24px}.hero-photo-card{width:145px;height:185px;top:auto;bottom:148px;right:16px;border-width:5px}.hero-photo-card span{left:8px;right:8px;bottom:8px;padding:7px 6px;font-size:.56rem}.hero-orbit-two{display:none}.gallery-expand{opacity:1;width:34px;height:34px}.lightbox{padding:18px}.lightbox-image{width:96vw;height:76vh}.lightbox-image>div{width:90vw;justify-content:center;white-space:normal;text-align:center;font-size:.78rem}}
+
+/* Montserrat brand typography and inquiry form states */
+body{font-family:var(--font-heading),Montserrat,sans-serif}
+.form-trap{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important}
+.form-error{margin-top:18px;color:#a93636;font-size:.84rem;font-weight:600}
+.contact-form .button:disabled{opacity:.65;cursor:wait;transform:none;box-shadow:none}
+@media(max-width:640px){.hero-scene{inset:-8% 0 95px}.hero-scene img{object-position:68% 12%;transform:scale(1.04)}}

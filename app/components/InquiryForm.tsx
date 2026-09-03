@@ -27,10 +27,10 @@ export function InquiryForm() {
       </div>
       <div className="formIntro"><span>02</span><div><h3>The celebration</h3><p>A few details help us imagine the right scale and feeling.</p></div></div>
       <div className="fieldGrid">
-        <label><span>Service needed *</span><select name="eventType" required defaultValue=""><option value="" disabled>Select one</option><option>Event décor & backdrop</option><option>Video guestbook</option><option>Both services</option></select></label>
+        <label><span>Service needed *</span><select name="eventType" required defaultValue=""><option value="" disabled>Select one</option><option>Event decor & backdrop</option><option>Video guestbook</option><option>Both services</option></select></label>
         <label><span>Venue or city *</span><input name="venue" required placeholder="Venue name or neighbourhood" /></label>
         <label><span>Estimated guests</span><input type="number" name="guests" min="1" placeholder="e.g. 75" /></label>
-        <label><span>Décor investment *</span><select name="budget" required defaultValue=""><option value="" disabled>Select a range</option><option>$500–$1,000</option><option>$1,000–$2,500</option><option>$2,500–$5,000</option><option>$5,000+</option><option>I’m not sure yet</option></select></label>
+        <label><span>Decor investment *</span><select name="budget" required defaultValue=""><option value="" disabled>Select a range</option><option>Under $350</option><option>$350–$750</option><option>$750+</option></select></label>
       </div>
       <label className="visionField"><span>What are you dreaming up? *</span><textarea name="vision" required rows={5} placeholder="Share your colour palette, inspiration, must-have moments, or anything else we should know…" /></label>
       <div className="formEnd"><p>By submitting, your email app will open with these details ready to send.</p><button type="submit">Send my inquiry <span>↗</span></button></div>
