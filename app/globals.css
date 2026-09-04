@@ -32,3 +32,10 @@ body{font-family:var(--font-heading),Montserrat,sans-serif}
 .form-error{margin-top:18px;color:#a93636;font-size:.84rem;font-weight:600}
 .contact-form .button:disabled{opacity:.65;cursor:wait;transform:none;box-shadow:none}
 @media(max-width:640px){.hero-scene{inset:-8% 0 95px}.hero-scene img{object-position:68% 12%;transform:scale(1.04)}}
+
+/* Premium geometric type hierarchy */
+body{font-family:var(--font-body),Poppins,sans-serif;font-weight:400}
+h1,h2,h3,.brand-logo,.hero-note,.brand-strip strong{font-family:var(--font-heading),Montserrat,sans-serif}
+.hero-content h1{font-weight:800}
+.site-header nav,.site-header nav a,button,.button{font-family:var(--font-heading),Montserrat,sans-serif;font-weight:600}
+.eyebrow{font-family:var(--font-heading),Montserrat,sans-serif;font-weight:700}
