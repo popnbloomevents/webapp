@@ -74,3 +74,14 @@ h2{font-family:var(--font-heading),Montserrat,sans-serif;font-weight:800;line-he
 .hero-content .hero-actions .button{font-family:var(--font-heading),Montserrat,sans-serif;font-weight:600;font-size:17px;line-height:1;padding:16px 25px}
 .site-header nav .nav-link{font-family:var(--font-heading),Montserrat,sans-serif;font-weight:600;font-size:18px;letter-spacing:0}
 @media(max-width:640px){.hero-content .hero-title{font-size:clamp(42px,12vw,58px)}.hero-content .hero-eyebrow{margin-bottom:22px;font-size:12px}.hero-content>.hero-body{margin:20px 0 26px;font-size:17px;line-height:1.55}.hero-content .hero-actions .button{font-size:15px;padding:14px 20px}.site-header nav .nav-link{font-size:16px}}
+
+/* Balanced reference scale and a single aligned content column */
+.hero-content{align-items:flex-start;text-align:left}
+.hero-content .hero-title,.hero-content .hero-eyebrow,.hero-content>.hero-body,.hero-content .hero-actions{width:100%;margin-left:0;margin-right:0;text-align:left}
+.hero-content .hero-title{max-width:720px;font-size:clamp(42px,4.7vw,64px);line-height:1.04;letter-spacing:-.035em}
+.hero-content .hero-eyebrow{max-width:720px;margin-bottom:24px;font-size:14px}
+.hero-content>.hero-body{max-width:610px;margin-top:24px;margin-bottom:30px;font-size:18px;line-height:1.55}
+.hero-content .hero-actions{display:flex;align-items:center;gap:14px}
+.hero-content .hero-actions .button{width:auto;font-size:15px;padding:15px 24px}
+.site-header nav .nav-link{font-size:16px}
+@media(max-width:640px){.hero-content .hero-title{max-width:100%;font-size:clamp(36px,10.5vw,48px);line-height:1.05}.hero-content .hero-eyebrow{margin-bottom:18px;font-size:11px;letter-spacing:.14em}.hero-content>.hero-body{max-width:94%;margin:18px 0 24px;font-size:15px;line-height:1.5}.hero-content .hero-actions{gap:10px}.hero-content .hero-actions .button{font-size:14px;padding:13px 18px}}
